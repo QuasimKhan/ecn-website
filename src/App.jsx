@@ -7,7 +7,7 @@ import About from './components/About/About'
 import Services from './components/Services/Services'
 import Books from './components/Books/Books'
 import Footer from './components/Footer/Footer'
-import PageNotFound from './components/PageNotFound'
+import PageNotFound from './components/PageNotFound.jsx'
 function App() {
 
   return (
