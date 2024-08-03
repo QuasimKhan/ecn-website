@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FadeIn from '../FadeIn';
 
 
 export default function Footer() {
@@ -7,6 +8,7 @@ export default function Footer() {
 
   return (
     <footer className={`w-full py-6 px-4  mt-12`}>
+        <FadeIn>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="text-center md:text-left">
           <p>&copy; {new Date().getFullYear()} <Link to="/" className={`hover:text-gray-400 `}>
@@ -39,6 +41,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
+      </FadeIn>
     </footer>
   );
 }
