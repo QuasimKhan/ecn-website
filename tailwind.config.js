@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
+const withMT = require("@material-tailwind/react/utils/withMT");
 
-export default {
+
+module.exports = withMT({
   darkMode: 'class', // or 'media'
   content: [
 
@@ -28,6 +30,9 @@ export default {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         }
+      },
+      colors: {
+        'c-blue-900' : '#201E43'
       }
     },
 
@@ -36,3 +41,4 @@ export default {
   plugins: [],
 
 }
+)

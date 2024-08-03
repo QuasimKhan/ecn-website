@@ -2,7 +2,7 @@ import React, { createContext, useState, useEffect, useContext } from 'react';
 
 const ThemeContext = createContext();
 
-export function ThemeProvider({ children }) {
+export function DarkTheme({ children }) {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
