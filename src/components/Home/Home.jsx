@@ -8,19 +8,9 @@ import { GalleryWithCarousel } from '../Carousel/GalleryWithCarousel.jsx';
 
 const Home = () => {
   const [notices, setNotices] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
-    getNotice()
-      .then((data) => {
-        setNotices(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err);
-        setLoading(false);
-      });
+    getNotice().then((data) => setNotices(data));
   }, []);
 
   
@@ -54,6 +44,7 @@ const Home = () => {
       </div>
     );
   }
+
 
   return (
     <>
