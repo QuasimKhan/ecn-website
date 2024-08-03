@@ -75,6 +75,15 @@ export default function Navigation() {
               </li>
               <li className="flex justify-center md:justify-start p-4">
                 <Link
+                  to="/gallery"
+                  className={`hover:text-gray-400 ${isActive("/gallery")}`}
+                  onClick={toggleMenu}
+                >
+                  Gallery
+                </Link>
+              </li>
+              <li className="flex justify-center md:justify-start p-4">
+                <Link
                   to="/services"
                   className={`hover:text-gray-400 ${isActive("/services")}`}
                   onClick={toggleMenu}

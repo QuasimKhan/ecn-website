@@ -7,6 +7,7 @@ import Services from './components/Services/Services';
 import Books from './components/Books/Books';
 import Footer from './components/Footer/Footer';
 import Notices from './components/Notices/Notices';
+import { GalleryWithTab } from './components/Gallery/Gallery';
 
 
 function App() {
@@ -19,6 +20,8 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/books' element={<Books />} />
         <Route path='/Notices' element={<Notices />} />
+        <Route path="/gallery/:page" element={<GalleryWithTab />} />
+        <Route path="/gallery" element={<GalleryWithTab />} />
       </Routes>
       <Footer />
     </BrowserRouter>

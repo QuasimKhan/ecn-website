@@ -47,15 +47,15 @@ export function GalleryWithCarousel() {
                 <Spinner color="blue" className="w-12 h-12" />
               </div>
             )}
+            <div className="absolute top-0 w-full bg-opacity-50 bg-black text-white text-center p-2 z-30">
+              {image.title}
+            </div>
             <img
               src={image.src}
               alt={image.alt}
               className={`absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-300 ${imageLoading[index] ? "opacity-0" : "opacity-100"}`}
               onLoad={() => handleImageLoad(index)}
             />
-            <div className="absolute bottom-0 w-full bg-opacity-50 bg-black text-white text-center p-2">
-              {image.title}
-            </div>
           </div>
         ))}
       </Carousel>
