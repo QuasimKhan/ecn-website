@@ -27,7 +27,7 @@ export default function Navigation() {
 
   return (
     <>
-      <div className="flex justify-center w-full fixed top-5">
+      <div className="flex justify-center w-full fixed top-5 font-serif">
         <nav
           className={`h-20 w-5/6 rounded-lg flex items-center justify-between p-4 transition-colors duration-300 dark:bg-gray-900 dark:shadow-[0_0_10px_5px_rgba(59,130,246,1)] bg-gray-800 shadow-[0_0_10px_5px_rgba(211,211,211,1)] text-white z-50`}
         >
