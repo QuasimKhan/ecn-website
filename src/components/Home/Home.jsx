@@ -1,5 +1,4 @@
 import React from 'react';
-import Carousel from './Carousel/Carousel';
 
 const Home = () => {
   return (
@@ -8,7 +7,7 @@ const Home = () => {
         <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100">Image Carousel</h1>
       </header>
       <main className="flex justify-center items-center">
-        <Carousel />
+
       </main>
     </div>
   );
