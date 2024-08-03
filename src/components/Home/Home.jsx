@@ -13,6 +13,7 @@ const Home = () => {
     getNotice().then((data) => setNotices(data));
   }, []);
 
+<<<<<<< HEAD
   
 
   if (loading) {
@@ -45,7 +46,8 @@ const Home = () => {
     );
   }
 
-
+=======
+>>>>>>> parent of 6a80f21 (Updated loading state)
   return (
     <>
     <div className='w-full mt-10'>
