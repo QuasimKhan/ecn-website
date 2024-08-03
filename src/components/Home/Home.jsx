@@ -7,10 +7,50 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [notices, setNotices] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    getNotice().then((data) => setNotices(data));
+    getNotice()
+      .then((data) => {
+        setNotices(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err);
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) {
+    return (
+      <div className="w-11/12 md:w-1/2 flex flex-col justify-center items-center mx-auto h-screen bg-gray-100 dark:bg-gray-900 mt-10 rounded-lg overflow-hidden">
+        <header className="sticky top-0 bg-gray-100 dark:bg-gray-900 z-10 py-4">
+          <FadeIn>
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 font-serif">Notice Board</h1>
+          </FadeIn>
+        </header>
+        <main className="flex flex-col justify-center items-center p-4">
+          <p className="text-gray-900 dark:text-gray-100">Loading...</p>
+        </main>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="w-11/12 md:w-1/2 flex flex-col justify-center items-center mx-auto h-screen bg-gray-100 dark:bg-gray-900 mt-10 rounded-lg overflow-hidden">
+        <header className="sticky top-0 bg-gray-100 dark:bg-gray-900 z-10 py-4">
+          <FadeIn>
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-gray-100 font-serif">Notice Board</h1>
+          </FadeIn>
+        </header>
+        <main className="flex flex-col justify-center items-center p-4">
+          <p className="text-red-500 dark:text-red-400">Failed to load notices. Please try again later.</p>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="w-11/12 md:w-1/2 flex flex-col gap-4 justify-center items-center mx-auto h-screen bg-gray-100 dark:bg-gray-900 mt-10 rounded-lg overflow-hidden">
