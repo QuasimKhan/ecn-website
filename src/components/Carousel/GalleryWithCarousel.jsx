@@ -58,6 +58,7 @@ export function GalleryWithCarousel() {
             </div>
           </div>
         ))}
+        
       </Carousel>
     </div>
   );
