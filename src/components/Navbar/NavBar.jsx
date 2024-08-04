@@ -84,11 +84,11 @@ export default function Navigation() {
               </li>
               <li className="flex justify-center md:justify-start p-4">
                 <Link
-                  to="/services"
-                  className={`hover:text-gray-400 ${isActive("/services")}`}
+                  to="/studymaterials"
+                  className={`hover:text-gray-400 ${isActive("/studymaterials")}`}
                   onClick={toggleMenu}
                 >
-                  Services
+                  Study Materials
                 </Link>
               </li>
               <li className="flex justify-center md:justify-start p-4">

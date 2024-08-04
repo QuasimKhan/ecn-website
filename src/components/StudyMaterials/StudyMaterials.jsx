@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Services = () => {
+const StudyMaterials = () => {
   return (
     <section className="my-8">
       <h2 className="text-2xl font-semibold text-gray-800">Services</h2>
@@ -22,4 +22,4 @@ const Services = () => {
   );
 }
 
-export default Services;
+export default StudyMaterials;

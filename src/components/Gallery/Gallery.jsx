@@ -4,6 +4,7 @@ import FadeIn from "../FadeIn";
 import Pagination from "../Pagination/Pagination";
 import { useParams } from 'react-router-dom';
 import CircularProgress from '@mui/material/CircularProgress'; // Import CircularProgress
+import { BreadcrumbsWithIcon } from '../Breadcrumbs/BreadCrumbs.jsx';
 
 export function GalleryWithTab() {
   const { page } = useParams();
@@ -34,7 +35,13 @@ export function GalleryWithTab() {
       .finally(() => {
         setLoading(false);
       });
+
   }, []);
+
+  const breadcrumbItems = [
+    { link: "/gallery", name: "Gallery" },
+    { link: `/gallery/${currentPage}`, name: `${currentPage}` },
+  ];
 
   const handleImageLoad = (value, index) => {
     setLoadingImages((prev) => ({
@@ -75,44 +82,50 @@ export function GalleryWithTab() {
   const totalPages = Math.ceil(totalImages / imagesPerPage);
 
   return (
-    <div className="border-b border-gray-300 pb-4">
-      <Tabs value={activeTab} onChange={(value) => setActiveTab(value)} className="mt-12">
-        <TabsHeader>
-          {data.map(({ label, value }) => (
-            <Tab key={value} value={value}>
-              {label}
-            </Tab>
-          ))}
-        </TabsHeader>
-        <TabsBody className="grid grid-cols-1 gap-4">
-          {paginatedData.map(({ value, images }) => (
-            <FadeIn key={value} show={activeTab === value || activeTab === ""}>
-              <TabPanel className="grid grid-cols-2 gap-4 md:grid-cols-3" value={value}>
-                {images?.map(({ imageLink }, index) => (
-                  <div key={index} className="relative h-60 w-full">
-                    {loadingImages[`${value}-${index}`] !== false && (
-                      <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
-                        <CircularProgress /> {/* Individual image spinner */}
-                      </div>
-                    )}
-                    <img
-                      className={`h-60 w-full max-w-full rounded-lg object-cover object-center transition-opacity ${
-                        loadingImages[`${value}-${index}`] ? "opacity-0" : "opacity-100"
-                      }`}
-                      src={imageLink}
-                      alt={`image-${index}`}
-                      onLoad={() => handleImageLoad(value, index)}
-                      onError={() => handleImageError(value, index)}
-                      onLoadStart={() => handleImageLoadStart(value, index)}
-                    />
-                  </div>
-                ))}
-              </TabPanel>
-            </FadeIn>
-          ))}
-        </TabsBody>
-      </Tabs>
-      <Pagination currentPage={currentPage} totalPages={totalPages} />
+    <div className='w-full mt-12'>
+      <div className="border-b border-gray-300 pb-4">
+        <div className='mt-12 mx-9'>
+          <BreadcrumbsWithIcon items={breadcrumbItems} />
+        </div>
+
+        <Tabs value={activeTab} onChange={(value) => setActiveTab(value)} className="mt-12">
+          <TabsHeader>
+            {data.map(({ label, value }) => (
+              <Tab key={value} value={value}>
+                {label}
+              </Tab>
+            ))}
+          </TabsHeader>
+          <TabsBody className="grid grid-cols-1 gap-4">
+            {paginatedData.map(({ value, images }) => (
+              <FadeIn key={value} show={activeTab === value || activeTab === ""}>
+                <TabPanel className="grid grid-cols-2 gap-4 md:grid-cols-3" value={value}>
+                  {images?.map(({ imageLink }, index) => (
+                    <div key={index} className="relative h-60 w-full">
+                      {loadingImages[`${value}-${index}`] !== false && (
+                        <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
+                          <CircularProgress /> {/* Individual image spinner */}
+                        </div>
+                      )}
+                      <img
+                        className={`h-60 w-full max-w-full rounded-lg object-cover object-center transition-opacity ${
+                          loadingImages[`${value}-${index}`] ? "opacity-0" : "opacity-100"
+                        }`}
+                        src={imageLink}
+                        alt={`image-${index}`}
+                        onLoad={() => handleImageLoad(value, index)}
+                        onError={() => handleImageError(value, index)}
+                        onLoadStart={() => handleImageLoadStart(value, index)}
+                      />
+                    </div>
+                  ))}
+                </TabPanel>
+              </FadeIn>
+            ))}
+          </TabsBody>
+        </Tabs>
+        <Pagination currentPage={currentPage} totalPages={totalPages} />
+      </div>
     </div>
   );
 }

@@ -18,7 +18,7 @@ export function BreadcrumbsWithIcon({ items }) {
           href={item.link} 
           className={`${
             index !== items.length - 1 
-              ? "opacity-60 hover:text-blue-600 dark:hover:text-blue-400" 
+              ? "opacity-60 hover:text-blue-600 dark:text-gray-100 dark:hover:text-blue-400" 
               : "dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400"
           }`} 
           key={index}
