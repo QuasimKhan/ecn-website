@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
-import ToggleSwitch from "./ToggleSwitch"; // Import the toggle switch component
-import logo from "./logo.png"; // Import the logo image
-import { useTheme } from "./ThemeContext"; // Import the theme context
+import { FaChevronDown, FaChevronUp } from "react-icons/fa"; // Import arrow icons
+import ToggleSwitch from "./ToggleSwitch";
+import logo from "./logo.png";
+import { useTheme } from "./ThemeContext";
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false); // State for dropdown visibility
   const [message, setMessage] = useState("");
   const location = useLocation();
   const { darkMode, toggleDarkMode } = useTheme();
@@ -13,6 +15,27 @@ export default function Navigation() {
   const toggleMenu = () => {
     setOpen(!open);
   };
+
+  const toggleDropdown = () => {
+    setDropdownOpen(prev => !prev);
+  };
+
+  const closeDropdown = useCallback(() => {
+    setDropdownOpen(false);
+  }, []);
+
+  const handleOutsideClick = (event) => {
+    if (!event.target.closest(".about-dropdown") && !event.target.closest(".about-button")) {
+      closeDropdown();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleOutsideClick);
+    return () => {
+      document.removeEventListener("mousedown", handleOutsideClick);
+    };
+  }, [handleOutsideClick]);
 
   const isActive = (path) => {
     return location.pathname === path ? "text-blue-500" : "text-white";
@@ -23,6 +46,11 @@ export default function Navigation() {
     const newMessage = darkMode ? "Light mode enabled" : "Dark mode enabled";
     setMessage(newMessage);
     setTimeout(() => setMessage(""), 3000); // Hide message after 3 seconds
+  };
+
+  const handleLinkClick = () => {
+    closeDropdown();
+    toggleMenu(); // Close menu when clicking a link
   };
 
   return (
@@ -40,7 +68,7 @@ export default function Navigation() {
           </a>
           <div className="flex items-center">
             <ul
-              className={`flex flex-col justify-end md:flex-row md:space-x-4 fixed md:static top-0 left-0 w-full md:w-auto h-4/6 md:h-auto bg-gray-800 md:bg-transparent transition-transform transform ${
+              className={`flex flex-col justify-end items-center md:flex-row md:space-x-4 fixed md:static top-0 left-0 w-full md:w-auto h-4/6 md:h-auto bg-gray-800 md:bg-transparent transition-transform transform ${
                 open ? "translate-x-0" : "-translate-x-full"
               } md:translate-x-0 z-20 md:z-auto`}
             >
@@ -64,14 +92,49 @@ export default function Navigation() {
                   Home
                 </Link>
               </li>
-              <li className="flex justify-center md:justify-start p-4">
-                <Link
-                  to="/about"
-                  className={`hover:text-gray-400 ${isActive("/about")}`}
-                  onClick={toggleMenu}
+              <li className="relative flex justify-center md:justify-start p-4 about-button">
+                <button
+                  onClick={toggleDropdown}
+                  className={`flex items-center hover:text-gray-400 ${isActive("/about")}`}
                 >
                   About
-                </Link>
+                  {dropdownOpen ? (
+                    <FaChevronUp className="ml-2" />
+                  ) : (
+                    <FaChevronDown className="ml-2" />
+                  )}
+                </button>
+                {dropdownOpen && (
+                  <ul className="absolute right-0 md:left-0 md:mt-10 w-44 md:w-48 bg-gray-800 rounded-lg shadow-lg z-30">
+                    <li>
+                      <Link
+                        to="/about/aboutECN"
+                        className="block px-4 py-2 text-white hover:bg-gray-700"
+                        onClick={handleLinkClick}
+                      >
+                        About ECN
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/about/arkaaneshura"
+                        className="block px-4 py-2 text-white hover:bg-gray-700"
+                        onClick={handleLinkClick}
+                      >
+                        Arkaan e Shura
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/about/history"
+                        className="block px-4 py-2 text-white hover:bg-gray-700"
+                        onClick={handleLinkClick}
+                      >
+                        History
+                      </Link>
+                    </li>
+                  </ul>
+                )}
               </li>
               <li className="flex justify-center md:justify-start p-4">
                 <Link
