@@ -60,10 +60,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/studymaterials" element={<StudyMaterials />} />
-        <Route path="/about" element={<Navigate to="/about/aboutecn" />} />
-        <Route path="about/aboutecn" element={<AboutECN />} />
-        <Route path="about/arkaaneshura" element={<ArkaaneShura />} />
-        <Route path="about/arkaaneshura/:profileName" element={<ProfileView profileData={profileData} />} />
+        <Route path="/About" element={<Navigate to="/about/aboutecn" />} />
+        <Route path="About/Aboutecn" element={<AboutECN />} />
+        <Route path="About/Arkaan-e-Shura" element={<ArkaaneShura />} />
+        <Route path="About/Arkaan-e-Shura/:profileName" element={<ProfileView profileData={profileData} />} />
         <Route path="/books" element={<Books />} />
         <Route path="/notices" element={<Notices />} />
         <Route path="/gallery/:page" element={<GalleryWithTab />} />

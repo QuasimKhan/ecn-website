@@ -108,7 +108,7 @@ export default function Navigation() {
                   <ul className="absolute left-24 md:left-0 md:mt-10 w-44 md:w-48 bg-gray-800 rounded-lg shadow-lg z-30">
                     <li>
                       <Link
-                        to="/about/aboutECN"
+                        to="/About/AboutECN"
                         className="block px-4 py-2 text-white hover:bg-gray-700"
                         onClick={handleLinkClick}
                       >
@@ -117,7 +117,7 @@ export default function Navigation() {
                     </li>
                     <li>
                       <Link
-                        to="/about/arkaaneshura"
+                        to="/About/Arkaan-e-Shura"
                         className="block px-4 py-2 text-white hover:bg-gray-700"
                         onClick={handleLinkClick}
                       >

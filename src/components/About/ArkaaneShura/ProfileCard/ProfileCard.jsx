@@ -7,7 +7,7 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
-import FadeIn from '../../AboutECN/FadeIn';
+import FadeIn from '../../../FadeIn';
 export function ProfileCard({ imgSrc, name, title, onButtonClick }) {
   return (
     <FadeIn>

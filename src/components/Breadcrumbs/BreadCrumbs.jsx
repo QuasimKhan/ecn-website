@@ -14,7 +14,7 @@ export function BreadcrumbsWithIcon({ items }) {
     const path = `/${pathSegments.slice(0, index + 1).join('/')}`;
     return {
       link: path,
-      name: segment.replace('-', ' '), // Replace hyphens with spaces for display
+      name: segment.toUpperCase().replace(/-/g, ' '), // Replace all hyphens with spaces for display
     };
   });
 
@@ -46,3 +46,4 @@ export function BreadcrumbsWithIcon({ items }) {
     </Breadcrumbs>
   );
 }
+  

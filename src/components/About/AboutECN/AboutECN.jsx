@@ -1,12 +1,12 @@
 import React from 'react';
-import FadeIn from './FadeIn';// Make sure to import the FadeIn component
+import FadeIn from '../../FadeIn';// Make sure to import the FadeIn component
 import { BreadcrumbsWithIcon } from '../../Breadcrumbs/BreadCrumbs';
 
 const AboutECN = () => {
 
 
   const breadcrumbItems = [
-    { link: "/aboutECN", name: "About ECN" },
+    { link: "/AboutECN", name: "About ECN" },
   ];
 
 
