@@ -19,6 +19,7 @@ module.exports = withMT({
       'mono': ['ui-monospace', 'SFMono-Regular'],
       'display': ['Oswald'],
       'body': ['"Open Sans"'],
+      'jameel': ['Jameel Noori Nastaleeq']
     },
 
     extend: {

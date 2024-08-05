@@ -12,12 +12,13 @@ import AboutECN from "./components/About/AboutECN/AboutECN";
 import ArkaaneShura, { profileData } from "./components/About/ArkaaneShura/ArkaaneShura";
 import { Helmet } from "react-helmet";
 import ProfileView from "./components/About/ArkaaneShura/ProfileView/ProfileView";
+import AboutNaseerpur from "./components/About/AboutNaseerpur/AboutNaseerpur";
 
 function App() {
   return (
     <BrowserRouter>
       <Helmet>
-        <title>Home - ECN</title>
+        <title>Educational Committee of Naseerpur - ECN</title>
         <meta
           name="description"
           content="The Educational Committee of Naseerpur (ECN), based in Naseerpur, is dedicated to spreading education and awareness. The Committee tirelessly work to teach and support learning, making a positive impact on the society"
@@ -32,7 +33,7 @@ function App() {
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Home - ECN" />
+        <meta property="og:title" content="Educational Committee of Naseerpur - ECN" />
         <meta
           property="og:description"
           content="The Educational Committee of Naseerpur (ECN), based in Naseerpur, is dedicated to spreading education and awareness. The Committee tirelessly work to teach and support learning, making a positive impact on the society."
@@ -45,7 +46,7 @@ function App() {
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Home - ECN" />
+        <meta name="twitter:title" content="Educational Committee of Naseerpur - ECN" />
         <meta
           name="twitter:description"
           content="The Educational Committee of Naseerpur (ECN), based in Naseerpur, is dedicated to spreading education and awareness. The Committee tirelessly work to teach and support learning, making a positive impact on the society"
@@ -63,6 +64,7 @@ function App() {
         <Route path="/About" element={<Navigate to="/about/aboutecn" />} />
         <Route path="About/Aboutecn" element={<AboutECN />} />
         <Route path="About/Arkaan-e-Shura" element={<ArkaaneShura />} />
+        <Route path="About/About-Naseerpur" element={<AboutNaseerpur/>} />
         <Route path="About/Arkaan-e-Shura/:profileName" element={<ProfileView profileData={profileData} />} />
         <Route path="/books" element={<Books />} />
         <Route path="/notices" element={<Notices />} />

@@ -126,11 +126,11 @@ export default function Navigation() {
                     </li>
                     <li>
                       <Link
-                        to="/about/history"
+                        to="/About/About-Naseerpur"
                         className="block px-4 py-2 text-white hover:bg-gray-700"
                         onClick={handleLinkClick}
                       >
-                        History
+                        About Naseerpur
                       </Link>
                     </li>
                   </ul>

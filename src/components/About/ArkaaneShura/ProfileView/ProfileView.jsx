@@ -14,8 +14,8 @@ const ProfileView = () => {
   }
 
   const breadcrumbItems = [
-    { link: "/about/arkaaneshura", name: "Arkaan e Shura" },
-    { link: `/about/arkaaneshura/${profileName}`, name: profile.name }
+    { link: "/About/Arkaan-e-Shura", name: "Arkaan e Shura" },
+    { link: `/About/Arkaan-e-Shura/${profileName}`, name: profile.name }
   ];
 
   return (

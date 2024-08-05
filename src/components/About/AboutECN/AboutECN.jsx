@@ -15,7 +15,7 @@ const AboutECN = () => {
     <div className='mt-12 mx-9'>
           <BreadcrumbsWithIcon items={breadcrumbItems} />
         </div>
-    <div className="bg-gray-100 dark:bg-gray-800 min-h-screen p-6 mt-12">
+    <div className=" min-h-screen p-6 mt-12">
       
       {/* Cover Photo */}
       <div className="relative">
