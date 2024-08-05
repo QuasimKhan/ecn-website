@@ -10,12 +10,37 @@ import { GalleryWithTab } from './components/Gallery/Gallery';
 import PageNotFound from './components/PageNotFound/PageNotFound'
 import AboutECN from './components/About/AboutECN/AboutECN';
 import ArkaaneShura from './components/About/ArkaaneShura/ArkaaneShura';
+import { Helmet } from 'react-helmet';
 
 
 
 function App() {
   return (
     <BrowserRouter>
+     <Helmet>
+        <title>Home - ECN</title>
+        <meta name="description" content="The Educational Committee of Naseerpur (ECN), based in Naseerpur, is dedicated to spreading education and awareness. The Committee tirelessly work to teach and support learning, making a positive imapact on the society" />
+        <meta name="keywords" content="ecn, Educational Committee of Naseerpur, ECNaseerpur, Naseerpur, Naseerpur Azamgarh, Naseerpur Educational society, Naseerpur Educational Committee, Quasim Khan" />
+        <link rel="canonical" href="https://ecnaseerpur.in" />
+        <meta name="robots" content="index,follow"/>
+        <meta name="author" content="Quasim Khan, ECN"/>
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Home - ECN" />
+        <meta property="og:description" content="The Educational Committee of Naseerpur (ECN), based in Naseerpur, is dedicated to spreading education and awareness. The Committee tirelessly work to teach and support learning, making a positive imapact on the society." />
+        <meta property="og:image" content="https://ecnaseerpur.in/assets/logo-CCgY3ykc.png" />
+        <meta property="og:url" content="https://ecnaseerpur.in" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Home - ECN" />
+        <meta name="twitter:description" content="The Educational Committee of Naseerpur (ECN), based in Naseerpur, is dedicated to spreading education and awareness. The Committee tirelessly work to teach and support learning, making a positive imapact on the society" />
+        <meta name="twitter:image" content="https://ecnaseerpur.in/assets/logo-CCgY3ykc.png" />
+      </Helmet>
+
+
+      
       <NavBar />
       <Routes>
         <Route path='/' element={<Home />} />
