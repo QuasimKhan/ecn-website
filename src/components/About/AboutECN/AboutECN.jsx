@@ -1,9 +1,22 @@
 import React from 'react';
 import FadeIn from './FadeIn';// Make sure to import the FadeIn component
+import { BreadcrumbsWithIcon } from '../../Breadcrumbs/BreadCrumbs';
 
 const AboutECN = () => {
+
+
+  const breadcrumbItems = [
+    { link: "/aboutECN", name: "About ECN" },
+  ];
+
+
   return (
+    <>
+    <div className='mt-12 mx-9'>
+          <BreadcrumbsWithIcon items={breadcrumbItems} />
+        </div>
     <div className="bg-gray-100 dark:bg-gray-800 min-h-screen p-6 mt-12">
+      
       {/* Cover Photo */}
       <div className="relative">
         <img
@@ -51,6 +64,7 @@ const AboutECN = () => {
         </FadeIn>
       </div>
     </div>
+    </>
   );
 };
 

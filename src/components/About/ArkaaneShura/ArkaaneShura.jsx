@@ -1,53 +1,135 @@
 import React from 'react';
 import { ProfileCard } from './ProfileCard/ProfileCard';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import FadeIn from '../AboutECN/FadeIn';
+import { BreadcrumbsWithIcon } from '../../Breadcrumbs/BreadCrumbs';
 
-const profileData = [
+export const profileData = [
   {
-    imgSrc: "/ProfileImg/quasimkhan.jpg",
+    imgSrc: "/ProfileImg/dummyProfile.png",
     name: "Quasim Khan",
     title: "President",
     link: "/about/arkaaneshura/quasim-khan", // Route to navigate to
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.kjsdhfjkhsakdghjkashgdjk skdjghjksdhagkj hk aksjdghjksdhg kjshdg jkasdghjhjksgdh sadjkghjkasdgh jskdgjksahdgjkh kjh asjkdghkjasdhgkjh kjshdg kjashdgk kjshdg kjag"
   },
   {
-    imgSrc: "https://docs.material-tailwind.com/img/team-4.jpg",
-    name: "John Doe",
-    title: "CTO",
-    link: "/john-doe", // Route to navigate to
+    imgSrc: "/ProfileImg/dummyProfile.png",
+    name: "Ariz Danish",
+    title: "Vice President",
+    link: "/about/arkaaneshura/ariz-danish", // Route to navigate to
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.kjsdhfjkhsakdghjkashgdjk skdjghjksdhagkj hk aksjdghjksdhg kjshdg jkasdghjhjksgdh sadjkghjkasdgh jskdgjksahdgjkh kjh asjkdghkjasdhgkjh kjshdg kjashdgk kjshdg kjag"
   },
   {
-    imgSrc: "https://docs.material-tailwind.com/img/team-2.jpg",
-    name: "Jane Smith",
-    title: "CFO",
-    link: "/jane-smith", // Route to navigate to
+    imgSrc: "/ProfileImg/dummyProfile.png",
+    name: "Obaid Ur Rahman",
+    title: "Khazin",
+    link: "/about/arkaaneshura/obaid-ur-rahman", // Route to navigate to
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.kjsdhfjkhsakdghjkashgdjk skdjghjksdhagkj hk aksjdghjksdhg kjshdg jkasdghjhjksgdh sadjkghjkasdgh jskdgjksahdgjkh kjh asjkdghkjasdhgkjh kjshdg kjashdgk kjshdg kjag"
   },
+  {
+    imgSrc: "/ProfileImg/dummyProfile.png",
+    name: "Ariz Anees",
+    title: "Member of Shura",
+    link: "/about/arkaaneshura/ariz-anees", // Route to navigate to
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.kjsdhfjkhsakdghjkashgdjk skdjghjksdhagkj hk aksjdghjksdhg kjshdg jkasdghjhjksgdh sadjkghjkasdgh jskdgjksahdgjkh kjh asjkdghkjasdhgkjh kjshdg kjashdgk kjshdg kjag"
+  },
+  {
+    imgSrc: "/ProfileImg/dummyProfile.png",
+    name: "Hassan Khan",
+    title: "Member of Shura",
+    link: "/about/arkaaneshura/hassan-khan", // Route to navigate to
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.kjsdhfjkhsakdghjkashgdjk skdjghjksdhagkj hk aksjdghjksdhg kjshdg jkasdghjhjksgdh sadjkghjkasdgh jskdgjksahdgjkh kjh asjkdghkjasdhgkjh kjshdg kjashdgk kjshdg kjag"
+  },
+  {
+    imgSrc: "/ProfileImg/dummyProfile.png",
+    name: "Aatif Asif",
+    title: "Member of Shura",
+    link: "/about/arkaaneshura/aatif-asif", // Route to navigate to
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.kjsdhfjkhsakdghjkashgdjk skdjghjksdhagkj hk aksjdghjksdhg kjshdg jkasdghjhjksgdh sadjkghjkasdgh jskdgjksahdgjkh kjh asjkdghkjasdhgkjh kjshdg kjashdgk kjshdg kjag"
+  },
+  {
+    imgSrc: "/ProfileImg/dummyProfile.png",
+    name: "Saquib Tarique",
+    title: "Member of Shura",
+    link: "/about/arkaaneshura/saquib-tarique", // Route to navigate to
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.kjsdhfjkhsakdghjkashgdjk skdjghjksdhagkj hk aksjdghjksdhg kjshdg jkasdghjhjksgdh sadjkghjkasdgh jskdgjksahdgjkh kjh asjkdghkjasdhgkjh kjshdg kjashdgk kjshdg kjag"
+  },
+  {
+    imgSrc: "/ProfileImg/dummyProfile.png",
+    name: "Muhammad Yusuf Khalid",
+    title: "Member of Shura",
+    link: "/about/arkaaneshura/muhammad-yusuf-khalid", // Route to navigate to
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.kjsdhfjkhsakdghjkashgdjk skdjghjksdhagkj hk aksjdghjksdhg kjshdg jkasdghjhjksgdh sadjkghjkasdgh jskdgjksahdgjkh kjh asjkdghkjasdhgkjh kjshdg kjashdgk kjshdg kjag"
+  },
+  {
+    imgSrc: "/ProfileImg/dummyProfile.png",
+    name: "Abu Huzaifa Falahi",
+    title: "Member of Shura",
+    link: "/about/arkaaneshura/abu-huzaifa-falahi", // Route to navigate to
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.kjsdhfjkhsakdghjkashgdjk skdjghjksdhagkj hk aksjdghjksdhg kjshdg jkasdghjhjksgdh sadjkghjkasdgh jskdgjksahdgjkh kjh asjkdghkjasdhgkjh kjshdg kjashdgk kjshdg kjag"
+  },
+  {
+    imgSrc: "/ProfileImg/dummyProfile.png",
+    name: "Muhammad Aazim Falahi",
+    title: "Member of Shura",
+    link: "/about/arkaaneshura/muhammad-aazim-falahi", // Route to navigate to
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.kjsdhfjkhsakdghjkashgdjk skdjghjksdhagkj hk aksjdghjksdhg kjshdg jkasdghjhjksgdh sadjkghjkasdgh jskdgjksahdgjkh kjh asjkdghkjasdhgkjh kjshdg kjashdgk kjshdg kjag"
+  },
+  {
+    imgSrc: "/ProfileImg/dummyProfile.png",
+    name: "Hafiz AzizurRahman",
+    title: "Member of Shura",
+    link: "/about/arkaaneshura/hafiz-azizurrahman", // Route to navigate to
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.kjsdhfjkhsakdghjkashgdjk skdjghjksdhagkj hk aksjdghjksdhg kjshdg jkasdghjhjksgdh sadjkghjkasdgh jskdgjksahdgjkh kjh asjkdghkjasdhgkjh kjshdg kjashdgk kjshdg kjag"
+  },
+  {
+    imgSrc: "/ProfileImg/dummyProfile.png",
+    name: "Muhammad Modassir",
+    title: "Member of Shura",
+    link: "/about/arkaaneshura/muhammad-modassir", // Route to navigate to
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.kjsdhfjkhsakdghjkashgdjk skdjghjksdhagkj hk aksjdghjksdhg kjshdg jkasdghjhjksgdh sadjkghjkasdgh jskdgjksahdgjkh kjh asjkdghkjasdhgkjh kjshdg kjashdgk kjshdg kjag"
+  }
   // Add more profiles here if needed
 ];
 
 const ArkaaneShura = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  
+  const isProfilePage = location.pathname.includes('/about/arkaaneshura/');
 
   const handleButtonClick = (link) => {
     navigate(link);
   };
 
+  const breadcrumbItems = [
+    { link: "/about/arkaaneshura", name: "Arkaan e Shura" },
+    ...(isProfilePage ? [{ link: location.pathname, name: location.pathname.split('/').pop().replace('-', ' ') }] : [])
+  ];
+
   return (
-    <div className="flex flex-col items-center justify-center mt-12 text-gray-900 dark:text-gray-100 px-4">
-      <h1 className="text-3xl font-bold mb-4">Arkaan e Shura</h1>
-      <FadeIn>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 w-full max-w-6xl">
-        {profileData.map((profile, index) => (
-          <ProfileCard
-            key={index}
-            imgSrc={profile.imgSrc}
-            name={profile.name}
-            title={profile.title}
-            onButtonClick={() => handleButtonClick(profile.link)}
-          />
-        ))}
+    <div className='w-full mt-12'>
+      {!isProfilePage && (
+        <div className='mt-12 mx-9'>
+          <BreadcrumbsWithIcon items={breadcrumbItems} />
+        </div>
+      )}
+      <div className="flex flex-col items-center justify-center mt-12 text-gray-900 dark:text-gray-100 px-4">
+        <h1 className="text-3xl font-bold mb-4">Arkaan e Shura</h1>
+        <FadeIn>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-6xl">
+            {profileData.map((profile, index) => (
+              <ProfileCard
+                key={index}
+                imgSrc={profile.imgSrc}
+                name={profile.name}
+                title={profile.title}
+                onButtonClick={() => handleButtonClick(profile.link)}
+              />
+            ))}
+          </div>
+        </FadeIn>
       </div>
-      </FadeIn>
     </div>
   );
 }

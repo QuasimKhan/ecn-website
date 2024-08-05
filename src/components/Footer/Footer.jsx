@@ -7,7 +7,7 @@ export default function Footer() {
 
 
   return (
-    <footer className={`w-full py-6 px-4  mt-12`}>
+    <footer className={`w-full py-6 px-4  mt-12 border-t border-gray-300 pt-4`}>
         <FadeIn>
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="text-center md:text-left">

@@ -63,7 +63,7 @@ export default function Navigation() {
             <img
               src={logo}
               alt="logo"
-              className="logo w-32 h-32 md:w-44 md:h-44 object-contain"
+              className="logo w-32 h-32 md:w-44 md:h-auto object-contain"
             />
           </a>
           <div className="flex items-center">
@@ -105,7 +105,7 @@ export default function Navigation() {
                   )}
                 </button>
                 {dropdownOpen && (
-                  <ul className="absolute right-0 md:left-0 md:mt-10 w-44 md:w-48 bg-gray-800 rounded-lg shadow-lg z-30">
+                  <ul className="absolute left-24 md:left-0 md:mt-10 w-44 md:w-48 bg-gray-800 rounded-lg shadow-lg z-30">
                     <li>
                       <Link
                         to="/about/aboutECN"
