@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BreadcrumbsWithIcon } from '../../Breadcrumbs/BreadCrumbs';
+import LazyLoad from 'react-lazyload';
 import FadeIn from '../../FadeIn';
 import './font.css'
 
@@ -119,7 +120,9 @@ const AboutNaseerpur = () => {
         </div>
         <FadeIn key={language}>
         <div className="bg-gray-200 dark:bg-gray-900 p-4 rounded-md">
-          <div dangerouslySetInnerHTML={{ __html: content[language] }} className="text-gray-900 dark:text-gray-100"></div>
+          <LazyLoad height={200} offset={100}>
+            <div dangerouslySetInnerHTML={{ __html: content[language] }} className="text-gray-900 dark:text-gray-100"></div>
+          </LazyLoad>
         </div>
         </FadeIn>
       </div>
