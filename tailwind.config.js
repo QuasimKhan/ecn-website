@@ -18,8 +18,7 @@ module.exports = withMT({
       'serif': ['ui-serif', 'Georgia'],
       'mono': ['ui-monospace', 'SFMono-Regular'],
       'display': ['Oswald'],
-      'body': ['"Open Sans"'],
-      'jameel': ['Jameel Noori Nastaleeq']
+      'body': ['"Open Sans"']
     },
 
     extend: {

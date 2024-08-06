@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BreadcrumbsWithIcon } from '../../Breadcrumbs/BreadCrumbs';
 import FadeIn from '../../FadeIn';
+import './font.css'
 
 const AboutNaseerpur = () => {
   const [language, setLanguage] = useState('urdu');
