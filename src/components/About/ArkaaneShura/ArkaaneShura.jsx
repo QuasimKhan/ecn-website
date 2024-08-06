@@ -44,7 +44,7 @@ export const profileData = [
     imgSrc: "/ProfileImg/dummyProfile.png",
     name: "Aatif Asif",
     title: "Member of Shura",
-    link: "/About/Arkaan-e-Shura/atif-asif", // Route to navigate to
+    link: "/About/Arkaan-e-Shura/aatif-asif", // Route to navigate to
     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.kjsdhfjkhsakdghjkashgdjk skdjghjksdhagkj hk aksjdghjksdhg kjshdg jkasdghjhjksgdh sadjkghjkasdgh jskdgjksahdgjkh kjh asjkdghkjasdhgkjh kjshdg kjashdgk kjshdg kjag"
   },
   {
