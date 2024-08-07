@@ -29,7 +29,7 @@ function App() {
         />
         <link rel="canonical" href="https://ecnaseerpur.in" />
         <meta name="robots" content="index,follow" />
-        <meta name="author" content="Quasim Khan, ECN" />
+        <meta name="author" content='Quasim Khan, ECN' />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
