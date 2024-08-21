@@ -5,6 +5,7 @@ import Noticecard from '../NoticeCard/Noticecard.jsx';
 import FadeIn from '../FadeIn.jsx';
 import { Link } from 'react-router-dom';
 import { GalleryWithCarousel } from '../Carousel/GalleryWithCarousel.jsx';
+import { YouTubeGallery } from '../YouTubeGallery/YouTubeGallery.jsx';
 
 
 const Home = () => {
@@ -74,6 +75,7 @@ const Home = () => {
             {notices.length > 7 && <Link to="/notices" className="text-blue-500 hover:underline mt-4">Read More</Link>}
           </main>
         </div>
+        <YouTubeGallery />
       </div>
     </>
   );
