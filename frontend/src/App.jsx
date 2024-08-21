@@ -13,6 +13,7 @@ import ArkaaneShura, { profileData } from "./components/About/ArkaaneShura/Arkaa
 import { Helmet } from "react-helmet";
 import ProfileView from "./components/About/ArkaaneShura/ProfileView/ProfileView";
 import AboutNaseerpur from "./components/About/AboutNaseerpur/AboutNaseerpur";
+import AdminDashboard from "./components/Admin/AdminDashboard";
 
 function App() {
   return (
@@ -70,6 +71,7 @@ function App() {
         <Route path="/notices" element={<Notices />} />
         <Route path="/gallery/:page" element={<GalleryWithTab />} />
         <Route path="/gallery" element={<GalleryWithTab />} />
+        <Route path="/ecn-admin" element={<AdminDashboard />} />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
       <Footer />

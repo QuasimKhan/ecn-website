@@ -1,22 +1,35 @@
-// Pagination.js
+// Pagination.jsx
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const Pagination = ({ currentPage, totalPages }) => {
+const Pagination = ({ currentPage, totalPages, onPageChange }) => {
+  const handlePrevPage = () => {
+    if (currentPage > 1) onPageChange(currentPage - 1);
+  };
+
+  const handleNextPage = () => {
+    if (currentPage < totalPages) onPageChange(currentPage + 1);
+  };
+
   return (
-    <div className="flex justify-center space-x-2 mt-4">
-      {Array.from({ length: totalPages }, (_, index) => (
-        <Link
-          key={index + 1}
-          to={`/gallery/${index + 1}`}
-          className={`px-4 py-2 border rounded ${
-            currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-white text-blue-500'
-          }`}
-        >
-          {index + 1}
-        </Link>
-      ))}
-    </div>
+    <footer className="flex justify-between w-full px-4 py-2 bg-gray-100 dark:bg-gray-900">
+      <button
+        onClick={handlePrevPage}
+        disabled={currentPage === 1}
+        className="text-blue-500 hover:underline disabled:text-gray-500"
+      >
+        Previous
+      </button>
+      <p className="text-gray-900 dark:text-gray-100">
+        Page {currentPage} of {totalPages}
+      </p>
+      <button
+        onClick={handleNextPage}
+        disabled={currentPage === totalPages}
+        className="text-blue-500 hover:underline disabled:text-gray-500"
+      >
+        Next
+      </button>
+    </footer>
   );
 };
 
