@@ -6,11 +6,11 @@ import { BreadcrumbsWithIcon } from '../../Breadcrumbs/BreadCrumbs';
 
 export const profileData = [
   {
-    imgSrc: "/ProfileImg/dummyProfile.png",
+    imgSrc: "/ProfileImg/quasimkhan.jpg",
     name: "Quasim Khan",
     title: "President (Ameer)",
     link: "/About/Arkaan-e-Shura/quasim-khan", // Route to navigate to
-    description: "Born on December 5, 2002 in Naseerpur, Azamgarh, Mr. Quasim Khan graduated in computer application. Earlier, he was the Vice President of ECN. He is a member of the ECN Advisory Council.."
+    description: "Born on December 5, 2002 in Naseerpur, Azamgarh. Mr. Quasim Khan graduated in computer application. Earlier, he was the Vice President of ECN from 2021 to 2024. He is a member of the ECN Advisory Council."
   },
   {
     imgSrc: "/ProfileImg/dummyProfile.png",
