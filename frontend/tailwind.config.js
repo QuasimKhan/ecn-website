@@ -18,7 +18,8 @@ module.exports = withMT({
       'serif': ['ui-serif', 'Georgia'],
       'mono': ['ui-monospace', 'SFMono-Regular'],
       'display': ['Oswald'],
-      'body': ['"Open Sans"']
+      'body': ['"Open Sans"'],
+      'pop': ['"Poppins"']
     },
 
     extend: {

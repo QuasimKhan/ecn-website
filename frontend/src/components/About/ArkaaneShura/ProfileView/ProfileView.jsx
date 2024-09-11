@@ -8,6 +8,8 @@ import FadeIn from '../../../FadeIn';
 const ProfileView = () => {
   const { profileName } = useParams();
   const profile = profileData.find((p) => p.name.toLowerCase().replace(/\s+/g, '-') === profileName);
+  console.log(profileData);
+  
 
   if (!profile) {
     return <PageNotFound />;
@@ -28,7 +30,7 @@ const ProfileView = () => {
         <img src={profile.imgSrc} alt={profile.name} className="w-40 h-40 rounded-full object-cover mb-4" />
         <h1 className="text-3xl font-bold mb-2">{profile.name}</h1>
         <p className="text-xl font-medium text-blue-600 dark:text-blue-100">{profile.title}</p>
-        <p className="text-lg mt-4 text-center max-w-2xl">{profile.description}</p>
+        <p className="text-lg mt-4 text-center max-w-2xl font-pop">{profile.description}</p>
       </div>
       </FadeIn>
     </div>
