@@ -13,6 +13,7 @@ import ArkaaneShura, { profileData } from "./components/About/ArkaaneShura/Arkaa
 import { Helmet } from "react-helmet";
 import ProfileView from "./components/About/ArkaaneShura/ProfileView/ProfileView";
 import AboutNaseerpur from "./components/About/AboutNaseerpur/AboutNaseerpur";
+import Quran from "./components/Books/Quran/Quran";
 
 function App() {
   return (
@@ -67,6 +68,7 @@ function App() {
         <Route path="About/About-Naseerpur" element={<AboutNaseerpur/>} />
         <Route path="About/Arkaan-e-Shura/:profileName" element={<ProfileView profileData={profileData} />} />
         <Route path="/books" element={<Books />} />
+        <Route path="/books/quran" element={<Quran />} />
         <Route path="/notices" element={<Notices />} />
         <Route path="/gallery/:page" element={<GalleryWithTab />} />
         <Route path="/gallery" element={<GalleryWithTab />} />
