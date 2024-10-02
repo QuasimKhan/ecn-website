@@ -73,6 +73,7 @@ function App() {
         <Route path="/gallery/:page" element={<GalleryWithTab />} />
         <Route path="/gallery" element={<GalleryWithTab />} />
         <Route path="*" element={<PageNotFound />} />
+        
       </Routes>
       <Footer />
     </BrowserRouter>
