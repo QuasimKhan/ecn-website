@@ -65,6 +65,7 @@ function App() {
         </Helmet>
 
         <NavBar /> {/* Public NavBar shown on all pages except login */}
+        
 
         <Routes>
           {/* Public Routes */}
