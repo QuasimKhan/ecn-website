@@ -10,51 +10,12 @@ const AboutECN = () => {
     urdu: `
       <div class="w-full font-jameel text-right tracking-wide text-xl">
       <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">کمیٹی کا سفر</h2>
-        <p class="text-gray-700 dark:text-gray-300">
-        نصیرپور کی تعلیمی کمیٹی (ای سی این) کئی سالوں سے نصیرپور کی کمیونٹی کی ایک بنیادی ستون رہی ہے۔ تعلیم اور آگاہی پھیلانے کے مشن کے ساتھ قائم کی گئی، ای سی این ہر عمر کے سیکھنے والوں کو مدد اور وسائل فراہم کرکے نصیرپور کے تعلیمی منظرنامے کو بہتر بنانے کے لیے وقف رہی ہے۔
-        </p>
-      </section>
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">ہمارا وژن</h2>
-        <p class="text-gray-700 dark:text-gray-300">
-        ای سی این میں، ہمارا بنیادی مقصد تعلیم کو فروغ دینا اور افراد کو اپنے علم اور مہارتوں کو بڑھانے کے مواقع فراہم کرنا ہے۔ ہم ایک ایسے مستقبل کا تصور کرتے ہیں جہاں کمیونٹی کے تمام افراد کو ان کے پس منظر یا سماجی و اقتصادی حیثیت سے قطع نظر تعلیم تک رسائی حاصل ہو۔ ہمارا مقصد افراد کو تعلیم کے ذریعے بااختیار بنانا اور ایک زیادہ باخبر اور باشعور معاشرہ تشکیل دینا ہے۔
-        </p>
-      </section>
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">ہمارے اقدار</h2>
-        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
-          <li>ایمانداری</li>
-          <li>جدت</li>
-          <li>بہتری</li>
-          <li>تعاون</li>
-        </ul>
-      </section>
+      Coming Soon..
     </div>
     `,
     english: `
     <div class="w-full font-serif tracking-wide text-xl">
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Committee's Journey</h2>
-        <p class="text-gray-700 dark:text-gray-300">
-        The Educational Committee of Naseerpur (ECN) has been a cornerstone of the Naseerpur community for several years. Established with the mission of spreading education and awareness, ECN has been dedicated to improving the educational landscape in Naseerpur by offering support and resources to learners of all ages.
-        </p>
-      </section>
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Our Vision</h2>
-        <p class="text-gray-700 dark:text-gray-300">
-        At ECN, our primary goal is to promote education and provide opportunities for individuals to enhance their knowledge and skills. We envision a future where education is accessible to all members of the community, regardless of their background or socioeconomic status. Our purpose is to empower individuals through education and create a more knowledgeable and informed society.
-        </p>
-      </section>
-      <section class="mb-8">
-        <h2 class="text-2xl font-semibold mb-4 text-gray-900 dark:text-gray-100">Our Values</h2>
-        <ul class="list-disc list-inside text-gray-700 dark:text-gray-300">
-          <li>Integrity</li>
-          <li>Innovation</li>
-          <li>Excellence</li>
-          <li>Collaboration</li>
-        </ul>
-      </section>
+     Coming Soon
     </div>
     `
   };
